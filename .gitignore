@@ -23,6 +23,7 @@ local.properties
 
 # Os specific files
 .DS_Store
+Thumbs.db
 
 # IntelliJ project files
 *.iml
