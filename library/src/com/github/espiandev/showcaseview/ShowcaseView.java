@@ -129,14 +129,14 @@ public class ShowcaseView extends RelativeLayout implements View.OnClickListener
 
         if (!mOptions.noButton && mEndButton.getParent() == null) {
             RelativeLayout.LayoutParams lps = (LayoutParams) generateDefaultLayoutParams();
-            lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            lps.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             lps.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             int margin = ((Number) (metricScale * 12)).intValue();
             lps.setMargins(margin, margin, margin, margin);
             lps.height = LayoutParams.WRAP_CONTENT;
             lps.width = LayoutParams.WRAP_CONTENT;
             mEndButton.setLayoutParams(lps);
-            mEndButton.setText(buttonText != null ? buttonText : getResources().getString(R.string.ok));
+            mEndButton.setText(buttonText != null ? buttonText : getResources().getString(android.R.string.ok));
             if (!hasCustomClickListener) mEndButton.setOnClickListener(this);
             addView(mEndButton);
         }
