@@ -1,5 +1,6 @@
 package com.github.espiandev.showcaseview;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,6 +27,7 @@ import static com.github.espiandev.showcaseview.anim.AnimationUtils.AnimationSta
 /**
  * A view which allows you to showcase areas of your app with an explanation.
  */
+@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 public class ShowcaseView extends RelativeLayout implements View.OnClickListener, View.OnTouchListener {
 
     public static final int TYPE_NO_LIMIT = 0;
@@ -132,7 +134,7 @@ public class ShowcaseView extends RelativeLayout implements View.OnClickListener
             lps.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             lps.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             int margin = ((Number) (metricScale * 12)).intValue();
-            lps.setMargins(margin, margin, margin, margin);
+            lps.setMargins(margin, margin + 30, margin, margin);
             lps.height = LayoutParams.WRAP_CONTENT;
             lps.width = LayoutParams.WRAP_CONTENT;
             mEndButton.setLayoutParams(lps);
