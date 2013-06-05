@@ -97,7 +97,12 @@ public class ShowcaseView extends RelativeLayout implements View.OnClickListener
         setConfigOptions(options);
     }
 
-    private void init() {
+    public boolean hasShot() {
+		return getContext().getSharedPreferences(PREFS_SHOWCASE_INTERNAL, Context.MODE_PRIVATE)
+                .getBoolean("hasShot" + getConfigOptions().showcaseId, false);
+	}
+
+	private void init() {
         boolean hasShot = getContext().getSharedPreferences(PREFS_SHOWCASE_INTERNAL, Context.MODE_PRIVATE)
                 .getBoolean("hasShot" + getConfigOptions().showcaseId, false);
         if (hasShot && mOptions.shotType == TYPE_ONE_SHOT) {
